@@ -14,7 +14,6 @@ public class SomeController {
 
 	@PostMapping("/some")
 	ResponseEntity<String> addUser(@Valid @RequestBody SomeDto dto) {
-		// persisting the user
 		return ResponseEntity.ok("User is valid");
 	}
 

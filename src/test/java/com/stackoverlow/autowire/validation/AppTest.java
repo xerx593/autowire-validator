@@ -43,21 +43,21 @@ class AppTest {
 	public void givenNoName_thenNotOk() throws Exception {
 		this.mockMvc
 				.perform(post("/some").contentType(MediaType.APPLICATION_JSON)
-						.content("{\"email\": \"john.doe@localhost\",\"custom\": \"heLLA\"}"))
+						.content("{\"email\": \"john.doe@localhost\",\"custom\": \"heLLo\"}"))
 				.andExpect(status().isBadRequest());
 	}
 
 	@Test
 	public void givenEmptyEmail_thenNotOk() throws Exception {
 		this.mockMvc.perform(post("/some").contentType(MediaType.APPLICATION_JSON)
-				.content("{\"name\": \"john\",\"custom\": \"heLLA\"}")).andExpect(status().isBadRequest());
+				.content("{\"name\": \"john\",\"custom\": \"heLLo\"}")).andExpect(status().isBadRequest());
 	}
 
 	@Test
 	public void givenInvalidEmail_thenNotOk() throws Exception {
 		this.mockMvc
 				.perform(post("/some").contentType(MediaType.APPLICATION_JSON)
-						.content("{\"name\": \"john\",\"email\": \"john.doe\",\"custom\": \"heLLA\"}"))
+						.content("{\"name\": \"john\",\"email\": \"john.doe\",\"custom\": \"heLLo\"}"))
 				.andExpect(status().isBadRequest());
 	}
 }

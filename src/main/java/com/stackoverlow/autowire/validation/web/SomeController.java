@@ -14,7 +14,7 @@ public class SomeController {
 
 	@PostMapping("/some")
 	ResponseEntity<String> addUser(@Valid @RequestBody SomeDto dto) {
-		return ResponseEntity.ok("User is valid");
+		return ResponseEntity.ok("Request is valid");
 	}
 
 }
